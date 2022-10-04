@@ -1,0 +1,833 @@
+/******************/
+/* --LETTERTYPE-- */
+/******************/
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/******************/
+/* --CSS REMEDY-- */
+/******************/
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+button, summary {
+  cursor: pointer;
+}
+
+/*************************/
+/* --CUSTOM PROPERTIES-- */
+/*************************/
+:root {
+  --netflix-color: #e50914;
+  --color-text: #ffffff;
+  --color-background: #141414;
+  --color-background2: #333333;
+  --color-button-background1: #ffffff;
+  --color-button-text1: #000000;
+  --color-button-background2: rgba(109, 109, 110, 0.7);
+  --color-button-text2: #ffffff;
+  --color-background-menu: rgba(0, 0, 0, 0.9);
+}
+
+/* lightmode */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-text: #141414;
+    --color-background: #ffffff;
+    --color-background2: #dddddd;
+    --color-background-menu: rgba(244, 244, 244, 0.9);
+  }
+}
+
+/************/
+/* --BODY-- */
+/************/
+body {
+  color: var(--color-text);
+  background-color: var(--color-background);
+  margin: 0;
+}
+
+.stop-scroll {
+  overflow: hidden;
+}
+/*****************/
+/* --MENU OPEN-- */
+/*****************/
+/* Menu laten verdwijnen */
+nav.hoofdmenu {
+  display: none;
+}
+
+/* Navigatie positionering,fullscreen en styling */
+nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-background-menu);
+  backdrop-filter: blur(.75em);
+  display: grid;
+  align-content: start;
+  justify-content: center;
+}
+
+/* Verwijderen van bullets lijst en ruimte toepassen */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10em 0 0 0;
+}
+
+/* Tussenruimte menu items en center */
+nav ul li {
+  text-align: center;
+  margin: 1em;
+}
+
+/* Menu items styling */
+nav ul li a {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: all .3s ease;
+}
+
+/* Menu items hover */
+nav ul li a:hover {
+  font-weight: 500;
+  color: var(--netflix-color)
+}
+
+/* Menu items active */
+nav ul li a:active {
+  text-decoration: underline;
+}
+
+/* Menu button sluiten styling */
+header nav button:first-of-type {
+  background-color: var(--netflix-color);
+  border-radius: 100%;
+  border: none;
+  padding: .75em;
+  justify-self: center;
+  position: fixed;
+  bottom: 2em;
+}
+
+/* Button aan lijst toevoegen en like icon styling */
+header nav button:first-of-type svg {
+  fill: var(--color-button-text2);
+  height: 1em;
+  display: flex;
+  margin: 0;
+}
+
+/**************/
+/* --HEADER-- */
+/**************/
+/* Styling + positie van de gehele header */
+header {
+  background-color: var(--color-background);
+  display: flex;
+  align-items: center;
+  padding: .75em;
+  position: sticky;
+  top: 0;
+}
+
+/* Menu open button styling */
+header button:first-of-type {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: .9em;
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--color-text);
+  background-color: transparent;
+  border: solid .1em var(--color-text);
+  border-radius: .25em;
+  padding: .5em .75em;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  transition: all .3s ease;
+}
+
+/* Menu open button icon styling */
+header button:first-of-type svg {
+  fill: var(--color-text);
+  height: 1em;
+  margin-left: .25em;
+}
+
+/* Menu open button hover styling */
+header button:first-of-type:hover {
+  background-color: var(--color-text);
+  color: var(--color-background);
+  transform: rotate(357deg);
+}
+
+/* Menu open button icon hover styling */
+header button:first-of-type:hover svg {
+  fill: var(--color-background);
+}
+
+/* Menu open button active styling */
+header button:first-of-type:active {
+  text-decoration: underline;
+  text-decoration-color: var(--netflix-color);
+  text-decoration-thickness: .15em;
+  text-decoration-style: wavy;
+}
+
+/* Netflix logo hoogte en tussenruimte */
+header a:first-of-type img {
+  height: 1em;
+  margin-right: .5em;
+}
+
+header a:first-of-type {
+  height: 1em;
+}
+
+/* Gebruiker foto styling */
+header a:nth-of-type(2) img {
+  height: 2.25em;
+  margin-right: .5em;
+  border-radius: .25em;
+}
+
+header a:nth-of-type(2) {
+  height: 2.25em;
+}
+
+/* Button afsluiten styling */
+header button:nth-of-type(2) {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: .9em;
+  font-weight: 400;
+  color: var(--color-button-text2);
+  background-color: var(--netflix-color);
+  border-radius: .25em;
+  border: none;
+  padding: .5em .75em;
+  transition: all .3s ease;
+}
+
+/* Button afsluiten hover styling */
+header button:nth-of-type(2):hover {
+  background-color: var(--color-text);
+  color: var(--netflix-color);
+  transform: rotate(180deg);
+}
+
+/* Button afsluiten active styling */
+header button:nth-of-type(2):active {
+  text-decoration: line-through;
+}
+
+
+/******************************/
+/* --Uitgelichte film/serie-- */
+/******************************/
+/* Achtergrond, grootte en positie content */
+main section:first-of-type {
+  background-image: url(../images/karmaswereld-uitgelicht.webp);
+  background-size: cover;
+  height: 13em;
+  padding: 0 .75em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Titel afbeelding grootte */
+main section:first-of-type img {
+  height: 5em;
+}
+
+/* Subtekst titel styling */
+main section:first-of-type p {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: .9em;
+  font-weight: 400;
+  color: #ffffff;
+  margin: .25em 0 0 0;
+}
+
+/* Groep link (Afspelen en Meer informatie) positie */
+main section:first-of-type div {
+  display: flex;
+  align-items: center;
+  margin: .5em 0 0 0;
+}
+
+/* Link Afspelen en Meer informatie styling */
+main section:first-of-type div a {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: .9em;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: .25em;
+  padding: .5em .75em;
+  display: flex;
+  align-items: center;
+}
+
+/* Link Afspelen en Meer informatie icon grootte + margin */
+main section:first-of-type div svg {
+  height: 1em;
+  margin-right: .25em;
+}
+
+/* Link Afspelen styling (kleur)*/
+main section:first-of-type div a:first-of-type {
+  color: var(--color-button-text1);
+  background-color: var(--color-button-background1);
+  transition: all .3s ease;
+}
+
+/* Link Afspelen icon */
+main section:first-of-type div a:first-of-type svg {
+  fill: var(--color-button-text1);
+}
+
+/* Link afspelen hover */
+main section:first-of-type div a:first-of-type:hover {
+  color: var(--color-button-background1);
+  background-color: var(--color-button-text1);
+}
+
+/* Link afspelen icon hover */
+main section:first-of-type div a:first-of-type:hover svg {
+  fill: var(--color-button-background1);
+  transform: rotate(.5turn);
+}
+
+/* Link afspelen active */
+main section:first-of-type div a:first-of-type:active {
+  text-decoration: underline;
+  text-decoration-color: var(--netflix-color);
+  text-decoration-thickness: .15em;
+  text-decoration-style: wavy;
+}
+
+/* Link Meer informatie styling (kleur) + margin */
+main section:first-of-type div a:nth-of-type(2) {
+  color: var(--color-button-text2);
+  background-color: var(--color-button-background2);
+  margin-left: .75em;
+  transition: all .3s ease;
+}
+
+/* Link Meer informatie icon */
+main section:first-of-type div a:nth-of-type(2) svg {
+  fill: var(--color-button-text2);
+}
+
+/* Link meer informatie hover */
+main section:first-of-type div a:nth-of-type(2):hover {
+  color: var(--color-button-text1);
+  background-color: var(--color-button-text2);
+}
+
+/* Link meer informatie icon hover */
+main section:first-of-type div a:nth-of-type(2):hover svg {
+  fill: var(--color-button-text1);
+  transform: rotate(.5turn);
+}
+
+/* Link meer informatie active */
+main section:first-of-type div a:nth-of-type(2):active {
+  text-decoration: underline;
+  text-decoration-color: var(--netflix-color);
+  text-decoration-thickness: .15em;
+  text-decoration-style: wavy;
+}
+/*********************************************/
+/* --Sliders met voorgestelde films/series-- */
+/*********************************************/
+/* Secties tussen ruimte */
+main section:nth-of-type(2), main section:nth-of-type(3), main section:nth-of-type(4) {
+  margin-top: 1em;
+}
+
+/* Titels styling */
+main section:nth-of-type(2) h2, main section:nth-of-type(3) h2, main section:nth-of-type(4) h2 {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: 1.25em;
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 0 .75em .5em .75em;
+}
+
+/* Sliders */
+main section:nth-of-type(2) ul, main section:nth-of-type(3) ul, main section:nth-of-type(4) ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  overflow-y: scroll;
+  padding: 0;
+  margin: 0 0 0 .75em;
+}
+
+/* Ruimte tussen slides */
+main section:nth-of-type(2) ul li, main section:nth-of-type(3) ul li, main section:nth-of-type(4) ul li {
+  margin-right: .75em;
+}
+
+/* Afbeeldingen hoogte + styling */
+main section:nth-of-type(2) ul li a img, main section:nth-of-type(3) ul li a img, main section:nth-of-type(4) ul li a img {
+  height: 6.5em;
+  border-radius: .25em;
+  transition: all .3s ease;
+}
+
+/* Afbeeldingen hover state styling */
+main section:nth-of-type(2) ul li img:hover, main section:nth-of-type(3) ul li img:hover, main section:nth-of-type(4) ul li img:hover {
+  scale: .95;
+}
+
+/* Afbeeldingen active */
+main section:nth-of-type(2) ul li a:active img, main section:nth-of-type(3) ul li a:active img, main section:nth-of-type(4) ul li a:active img {
+  filter: grayscale(100%);
+}
+
+/**************/
+/* --Footer-- */
+/**************/
+/* Link lijst grid */
+footer ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: .75em;
+  padding: 0;
+  margin: 2em .75em 1em .75em;
+}
+
+/* Link styling */
+footer ul li a {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: .9em;
+  font-weight: 400;
+  color: var(--color-text);
+  transition: all .3s ease;
+}
+
+/* Link hover */
+footer ul li a:hover {
+  color: var(--netflix-color);
+}
+
+/* Link active */
+footer ul li a:active {
+  text-decoration: underline;
+  text-decoration-color: var(--netflix-color);
+  text-decoration-thickness: .15em;
+  text-decoration-style: wavy;
+}
+
+/* Footer maker en website */
+footer p {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: .75em;
+  font-weight: 100;
+  text-align: center;
+  color: var(--color-text);
+  background-color: var(--color-background2);
+  padding: .25em;
+  margin: 1em 0 0 0;
+}
+
+/****************/
+/* ------------ */
+/* ------------ */
+/* --Pagina 2-- */
+/* ------------ */
+/* ------------ */
+/****************/
+/*****************************************/
+/* --Uitgelichte serie/film - pagina 2-- */
+/*****************************************/
+/* Button aan lijst toevoegen en like styling */
+#pagina2 main section:first-of-type div button {
+  background-color: var(--color-button-background2);
+  border-radius: 100%;
+  border: solid .1em var(--color-button-text2);
+  padding: .75em;
+  margin-left: .75em;
+  transition: all .3s ease;
+}
+
+/* Button aan lijst toevoegen en like icon styling */
+#pagina2 main section:first-of-type div button svg {
+  fill: var(--color-button-text2);
+  height: 1em;
+  display: flex;
+  margin-right: 0;
+}
+
+/* Button aan lijst toevoegen en like hover */
+#pagina2 main section:first-of-type div button:hover {
+  transform: scale(1.25);
+}
+
+/* Button aan lijst toevoegen en like active */
+#pagina2 main section:first-of-type div button:active {
+  border-color: var(--netflix-color);
+}
+
+#pagina2 main section:first-of-type div button:active svg {
+  fill: var(--netflix-color);
+}
+
+/*************************************/
+/* --Info over serie en aflevering-- */
+/*************************************/
+#pagina2 main section:nth-of-type(2) {
+  margin: 1em .75em 0 .75em;
+}
+
+/* Eerste groep op een rij */
+#pagina2 main section:nth-of-type(2) div:first-of-type {
+  display: flex;
+  align-items: center;
+}
+
+/* Ruimte tussen content in de eerste rij */
+#pagina2 main section:nth-of-type(2) div:first-of-type img, #pagina2 main section:nth-of-type(2) div:first-of-type p:nth-of-type(2), #pagina2 main section:nth-of-type(2) div:first-of-type p:nth-of-type(3) {
+  margin-left: .75em;
+}
+
+/* kijkwijzer grootte */
+#pagina2 main section:nth-of-type(2) div:first-of-type img {
+  height: 2em;
+}
+
+/* border broodtekst HD */
+#pagina2 main section:nth-of-type(2) div:first-of-type p:last-of-type {
+  border: solid .1em var(--color-text);
+  padding: 0 .25em;
+  border-radius: .25em;
+}
+
+/* Broodtekst (jaartal, seizoenen, HD en omschrijving) styling */
+#pagina2 main section:nth-of-type(2) p {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: .9em;
+  font-weight: 400;
+  color: var(--color-text);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Genres titel + ul naast elkaar */
+#pagina2 main section:nth-of-type(2) div:nth-of-type(2) {
+  display: flex;
+  align-items: baseline;
+}
+
+/* Genres titel styling */
+#pagina2 main section:nth-of-type(2) div:nth-of-type(2) h4 {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: .9em;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-top: 1em;
+}
+
+/* Genres styling */
+#pagina2 main section:nth-of-type(2) div:nth-of-type(2) ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: .5em;
+}
+
+/* Genres ruimte tussen links */
+#pagina2 main section:nth-of-type(2) div:nth-of-type(2) ul li {
+  margin-right: .5em;
+}
+
+/* Genres links styling */
+#pagina2 main section:nth-of-type(2) div:nth-of-type(2) ul li a {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: .9em;
+  font-weight: 300;
+  color: var(--color-text);
+  transition: all .3s ease;
+}
+
+/* Genres Link hover */
+#pagina2 main section:nth-of-type(2) div:nth-of-type(2) ul li a:hover {
+  color: var(--netflix-color);
+}
+
+/* Genres Link active */
+#pagina2 main section:nth-of-type(2) div:nth-of-type(2) ul li a:active {
+  text-decoration: underline;
+  text-decoration-color: var(--netflix-color);
+  text-decoration-thickness: .15em;
+  text-decoration-style: wavy;
+}
+/* Aflevering titel styling */
+#pagina2 main section:nth-of-type(2) h2 {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: 1.25em;
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 1em 0 0 0;
+}
+
+/* Seizoen + aflevering subkop styling */
+#pagina2 main section:nth-of-type(2) h3 {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: .9em;
+  font-weight: 300;
+  color: var(--color-text);
+  margin: 0 0 .5em 0;
+}
+
+/********************/
+/* --Afleveringen-- */
+/********************/
+/* Ruimte tussen sectie en body */
+#pagina2 main section:nth-of-type(3) {
+  margin: 2em .75em 0 .75em;
+}
+
+/* underline link uitschakelen */
+#pagina2 main section:nth-of-type(3) a {
+  text-decoration: none;
+}
+
+/* Sectie titel styling */
+#pagina2 main section:nth-of-type(3) h2 {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: 1.25em;
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* Positie complete rij + tussen ruimte + styling */
+#pagina2 main section:nth-of-type(3) a article {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-background2);
+  margin-top: .75em;
+  padding: .75em;
+  border-radius: .25em;
+  transition: all .3s ease;
+}
+
+/* Afleveringen hover */
+#pagina2 main section:nth-of-type(3) a:hover article {
+  background-color: transparent;
+  border: solid .2em var(--color-background2);
+}
+
+/* Afleveringen active */
+#pagina2 main section:nth-of-type(3) a:active article img {
+  filter: grayscale(100%);
+}
+
+/* Afbeelding grootte + styling */
+#pagina2 main section:nth-of-type(3) a article img {
+  height: 5em;
+  border-radius: .25em;
+}
+
+/* tussen ruimte afbeelding en tekst */
+#pagina2 main section:nth-of-type(3) a article div {
+  margin-left: .5em;
+}
+
+/* Kop aflevering styling */
+#pagina2 main section:nth-of-type(3) a article div h3 {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: 1.25em;
+  font-weight: 400;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* Aflevering en duur styling */
+#pagina2 main section:nth-of-type(3) a article div h4 {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: .9em;
+  font-weight: 300;
+  color: var(--color-text);
+  margin: 0 0 .5em 0;
+}
+
+/* Broodtekst styling */
+#pagina2 main section:nth-of-type(3) a article div p {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: .9em;
+  font-weight: 400;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/**********************/
+/* --Meer zoals dit-- */
+/**********************/
+/* Grid + tussen ruimte */
+#pagina2 main section:nth-of-type(4) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: .75em;
+  margin: 2em .75em 0 .75em;
+}
+
+/* Titel styling */
+#pagina2 main section:nth-of-type(4) h2 {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: 1.25em;
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 0;
+  grid-column: -1 / 1;
+}
+
+/* Link underline verwijderen + achtergrond */
+#pagina2 main section:nth-of-type(4) a {
+  background-color: var(--color-background2);
+  border-radius: .25em;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+
+/* Meer zoals dit hover */
+#pagina2 main section:nth-of-type(4) a:hover {
+  background-color: transparent;
+  border: solid .2em var(--color-background2);
+}
+
+/* Meer zoals dit active */
+#pagina2 main section:nth-of-type(4) a:active article img:first-of-type {
+  filter: grayscale(100%);
+}
+
+/* Afbeelding styling */
+#pagina2 main section:nth-of-type(4) a article img:first-of-type {
+  width: 100%;
+  border-top-left-radius: .25em;
+  border-top-right-radius: .25em;
+}
+
+/* kijkwijzer + button naast elkaar */
+#pagina2 main section:nth-of-type(4) a article div {
+  display: flex;
+  align-items: center;
+  margin: .5em .5em 0 .5em;
+}
+
+/* Kijkwijzer afbeelding grootte */
+#pagina2 main section:nth-of-type(4) a article div img:first-of-type {
+  height: 2em;
+  width: auto;
+  margin-right: auto;
+}
+
+/* Toevoegen aan lijst button styling */
+#pagina2 main section:nth-of-type(4) a article div button {
+  background-color: var(--color-button-background2);
+  border-radius: 100%;
+  border: solid .1em var(--color-button-text2);
+  padding: .75em;
+  transition: all .3s ease;
+}
+
+/* Toevoegen aan lijst icon styling */
+#pagina2 main section:nth-of-type(4) a article div button svg {
+  fill: var(--color-button-text2);
+  height: 1em;
+  display: flex;
+}
+
+/* Broodtekst styling */
+#pagina2 main section:nth-of-type(4) a article p {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: .9em;
+  font-weight: 400;
+  color: var(--color-text);
+  margin: .5em;
+}
+
+/************************/
+/* --Trailers en meer-- */
+/************************/
+/* Grid + tussenruimte */
+#pagina2 main section:nth-of-type(5) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: .75em;
+  margin: 2em .75em 0 .75em;
+}
+
+/* Titel styling */
+#pagina2 main section:nth-of-type(5) h2 {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: 1.25em;
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 0;
+  grid-column: -1 / 1;
+}
+
+/* Link underline verwijderen + achtergrond */
+#pagina2 main section:nth-of-type(5) a {
+  background-color: var(--color-background2);
+  border-radius: .25em;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+
+/* trailers en meer hover */
+#pagina2 main section:nth-of-type(5) a:hover {
+  background-color: transparent;
+  border: solid .2em var(--color-background2);
+}
+
+/* trailers en meer active */
+#pagina2 main section:nth-of-type(5) a:active article img {
+  filter: grayscale(100%);
+}
+
+/* Afbeelding styling */
+#pagina2 main section:nth-of-type(5) a article img {
+  width: 100%;
+  border-top-left-radius: .25em;
+  border-top-right-radius: .25em;
+}
+
+/* Video titel styling */
+#pagina2 main section:nth-of-type(5) h3 {
+  font-family: 'Kanit', sans-sans-serif;
+  font-size: .9em;
+  font-weight: 400;
+  color: var(--color-text);
+  margin: .5em;
+}
+
+/*******************/
+/* --FOCUS STATE-- */
+/*******************/
+a:focus, button:focus {
+  outline: .25em dashed mediumblue;
+}
+
+/*****************************/
+/* --Body laten verdwijnen-- */
+/*****************************/
+body.verdwijn {
+  display: none;
+}
